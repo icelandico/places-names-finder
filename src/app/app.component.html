@@ -1,8 +1,9 @@
 <main>
-  <app-carto-map [center]="[40.42, -3.7]" zoom="13" (onMapCreated)="onMapCreated($event)">
+  <app-finder></app-finder>
+  <app-carto-map [center]="[52, 19]" zoom="7" (onMapCreated)="onMapCreated($event)">
     <app-basemap
       [map]="map"
-      url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png">
+      url="https://{s}.basemaps.cartocdn.com/rastertiles/light_all/{z}/{x}/{y}.png">
     </app-basemap>
 
     <app-layer
@@ -12,14 +13,4 @@
       [layerStyle]="layerStyle">
     </app-layer>
   </app-carto-map>
-
-  <app-widget
-    class="Histogram"
-    [map]="map"
-    [client]="cartoClient"
-    [source]="layerSource"
-    column="price"
-    [bins]="7"
-    (onDataChanged)="onWidgetDataChanged($event)">
-  </app-widget>
 </main>

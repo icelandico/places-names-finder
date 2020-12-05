@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import {Map} from 'leaflet';
+import { Map } from 'leaflet';
 
 @Component({
   selector: 'app-carto-map',
