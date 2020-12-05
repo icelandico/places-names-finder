@@ -12,14 +12,10 @@ export class AppComponent {
   map: Map;
   cartoClient: any;
 
-  layerSource = 'SELECT * FROM listings WHERE price < 150';
+  layerSource = `SELECT * FROM wojewodztwa`;
   layerStyle = `
     #layer {
-      marker-width: 5;
-      marker-fill-opacity: 0.7;
-      marker-allow-overlap: true;
-      marker-line-width: 0;
-      marker-comp-op: multiply;
+      polygon-fill: rgba(22, 33, 44, 1);
     }
   `;
 

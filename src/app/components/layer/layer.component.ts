@@ -25,7 +25,6 @@ export class LayerComponent implements OnInit, OnChanges {
     this.cartoCSS = new carto.style.CartoCSS(this.layerStyle);
 
     this.layer = new carto.layer.Layer(this.cartoSource, this.cartoCSS);
-    this.layer.hide();
 
     this.client.addLayer(this.layer);
     this.client.getLeafletLayer().addTo(this.map);
