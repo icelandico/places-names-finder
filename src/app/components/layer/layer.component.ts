@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, OnChanges} from '@angular/core';
+import {Component, OnInit, Input, OnChanges, SimpleChange} from '@angular/core';
 import { Map } from 'leaflet';
 import * as carto from '@carto/carto.js';
 
@@ -33,6 +33,7 @@ export class LayerComponent implements OnInit, OnChanges {
   ngOnChanges(): void {
     if (!this.layer) return;
 
+    this.cartoSource.setQuery(this.layerSource);
     this.cartoCSS.setContent(this.layerStyle)
       .then(() => this.layer.show());
   }

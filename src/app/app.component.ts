@@ -12,7 +12,8 @@ export class AppComponent {
   map: Map;
   cartoClient: any;
   layerSource = `SELECT * FROM wojewodztwa`;
-  pointsLayerSource = `SELECT * FROM pl_points`;
+  pointsLayerSource = this.getAllPoints();
+  searchValue: string;
   layerStyle = `
     #layer {
       polygon-fill: rgba(22, 33, 44, 1);
@@ -32,8 +33,6 @@ export class AppComponent {
     }
   `;
 
-  searchValue: string;
-
   constructor() {
     this.cartoClient = new carto.Client({
       apiKey: 'default_public',
@@ -47,6 +46,15 @@ export class AppComponent {
 
   public submitValue($event): void {
     this.searchValue = $event;
+    this.pointsLayerSource = this.queryByName($event);
+  }
+
+  private queryByName(name: string): string {
+    return `SELECT * FROM pl_points WHERE lower(naz_glowna) LIKE '%${name.toLowerCase()}%' `;
+  }
+
+  private getAllPoints(): string {
+    return `SELECT * FROM pl_points`;
   }
 
   public onWidgetDataChanged(data): void {
