@@ -1,7 +1,5 @@
 <div class="c-finder__container">
-  <div class="c-finder__input-box">
-    <input #input class="c-finder" type="text" />
-    <div class="c-finder__input-clear">X</div>
-  </div>
-  <button class="c-finder__search" type="submit" (click)="onSubmit()">Search</button>
+  <input #input class="c-finder" type="text" placeholder="Type place name, ending, beginning..."/>
+  <button class="c-finder__button c-finder__search" type="submit" (click)="onSubmit()">Search</button>
+  <button class="c-finder__button c-finder__input-clear" type="button">Show all places</button>
 </div>
