@@ -11,8 +11,7 @@ export class FinderComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   onSubmit(param?: string): void {
     let inputValue;

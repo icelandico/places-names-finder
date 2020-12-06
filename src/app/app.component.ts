@@ -22,14 +22,18 @@ export class AppComponent {
 
   pointsLayerStyle = `
     #layer {
-      marker-width: 2;
-      marker-fill: #EE4D5A;
+      marker-width: 5;
+      marker-fill: #FFB927;
       marker-fill-opacity: 0.9;
-      marker-line-color: #FFFFFF;
-      marker-line-width: 1;
-      marker-line-opacity: 1;
-      marker-type: ellipse;
       marker-allow-overlap: true;
+      marker-line-width: 1;
+      marker-line-color: #FFF;
+      marker-line-opacity: 1;
+      // marker-comp-op: multiply;
+
+      [zoom < 7]{ marker-width: 2; }
+      [zoom >= 8]{ marker-width: 8; }
+      [zoom >= 10]{ marker-width: 11; }
     }
   `;
 
@@ -49,6 +53,9 @@ export class AppComponent {
     this.pointsLayerSource = this.queryByName($event);
   }
 
+  clickHandler(e): void {
+    console.log('clicked', e)
+  }
 
   private queryByName(name: string): string {
     return `SELECT * FROM pl_points WHERE lower(naz_glowna) LIKE '%${name.toLowerCase()}%' `;
