@@ -11,7 +11,6 @@ import { buildStyle } from './utils/style';
 export class AppComponent {
   map: Map;
   cartoClient: any;
-
   layerSource = `SELECT * FROM wojewodztwa`;
   pointsLayerSource = `SELECT * FROM pl_points`;
   layerStyle = `
@@ -33,6 +32,8 @@ export class AppComponent {
     }
   `;
 
+  searchValue: string;
+
   constructor() {
     this.cartoClient = new carto.Client({
       apiKey: 'default_public',
@@ -42,6 +43,10 @@ export class AppComponent {
 
   public onMapCreated(map): void {
     this.map = map;
+  }
+
+  public submitValue($event): void {
+    this.searchValue = $event;
   }
 
   public onWidgetDataChanged(data): void {
