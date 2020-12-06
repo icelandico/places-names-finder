@@ -1,7 +1,6 @@
-import {Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { Map } from 'leaflet';
 import * as carto from '@carto/carto.js';
-import {logger} from "codelyzer/util/logger";
 
 @Component({
   selector: 'app-layer',
@@ -27,8 +26,8 @@ export class LayerComponent implements OnInit, OnChanges {
 
     this.layer = new carto.layer.Layer(this.cartoSource, this.cartoCSS, {
       featureOverColumns: this.getLayersAttributes(this.cartoSource._id)
-    }
-    );
+    });
+
     this.client.addLayer(this.layer);
     this.client.getLeafletLayer().addTo(this.map);
 
@@ -50,8 +49,8 @@ export class LayerComponent implements OnInit, OnChanges {
 
   ngOnChanges(): void {
     if (!this.layer) return;
+    this.cartoSource.setQuery(this.layerSource)
 
-    this.cartoSource.setQuery(this.layerSource);
     this.cartoCSS.setContent(this.layerStyle)
       .then(() => this.layer.show());
   }
