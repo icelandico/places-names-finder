@@ -13,9 +13,23 @@ export class AppComponent {
   cartoClient: any;
 
   layerSource = `SELECT * FROM wojewodztwa`;
+  pointsLayerSource = `SELECT * FROM pl_points`;
   layerStyle = `
     #layer {
       polygon-fill: rgba(22, 33, 44, 1);
+    }
+  `;
+
+  pointsLayerStyle = `
+    #layer {
+      marker-width: 2;
+      marker-fill: #EE4D5A;
+      marker-fill-opacity: 0.9;
+      marker-line-color: #FFFFFF;
+      marker-line-width: 1;
+      marker-line-opacity: 1;
+      marker-type: ellipse;
+      marker-allow-overlap: true;
     }
   `;
 
