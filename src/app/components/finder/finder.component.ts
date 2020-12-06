@@ -14,8 +14,14 @@ export class FinderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(): void {
-    const inputValue = this.input.nativeElement.value;
+  onSubmit(param?: string): void {
+    let inputValue;
+    if (param) {
+      inputValue = '';
+      this.input.nativeElement.value = inputValue;
+    } else {
+      inputValue = this.input.nativeElement.value;
+    }
     this.searchValue.emit(inputValue);
   }
 

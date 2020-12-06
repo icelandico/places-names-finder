@@ -49,6 +49,7 @@ export class AppComponent {
     this.pointsLayerSource = this.queryByName($event);
   }
 
+
   private queryByName(name: string): string {
     return `SELECT * FROM pl_points WHERE lower(naz_glowna) LIKE '%${name.toLowerCase()}%' `;
   }
