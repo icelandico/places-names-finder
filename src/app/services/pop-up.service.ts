@@ -10,21 +10,22 @@ export class PopUpService {
 
   createPlacePopup(placeEvent: any, map): void {
     const popup = L.popup({ closeButton: false });
+
     let content = '<div class="widget">';
 
     if (placeEvent.data.naz_glowna) {
-      content += `<h2 class="h2">${placeEvent.data.naz_glowna}</h2>`;
+      content += `<h2 class="c-popup__title">${placeEvent.data.naz_glowna}</h2>`;
     }
 
     if (placeEvent.data.powiat || placeEvent.data.woj) {
-      content += `<p>powiat: </p><h3>${placeEvent.data.powiat}</h3>`;
-      content += `<p>województwo</p><h3>${placeEvent.data.woj}</h3>`;
-      content += `<p>typ miejscowości</p><h3>${placeEvent.data.rodzaj_obi}</h3>`;
+      content += `<p class="c-popup__data">Powiat: <span class="c-popup__data--bold">${placeEvent.data.powiat}</span><p>`;
+      content += `<p class="c-popup__data">Województwo: <span class="c-popup__data--bold">${placeEvent.data.woj}</span></p>`;
+      content += `<p class="c-popup__data">Typ miejscowości: <span class="c-popup__data--bold">${placeEvent.data.rodzaj_obi}</span></p>`;
     }
 
     popup.setContent(content);
     popup.setLatLng(placeEvent.latLng);
-    
+
     if (!popup.isOpen()) {
       popup.openOn(map);
     }

@@ -8,6 +8,7 @@ import { MapComponent } from './components/map/map.component';
 import { BasemapComponent } from './components/basemap/basemap.component';
 import { FinderComponent } from './components/finder/finder.component';
 import { PopUpService } from './services/pop-up.service';
+import { PopupComponent } from './components/popup/popup.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PopUpService } from './services/pop-up.service';
     WidgetComponent,
     MapComponent,
     BasemapComponent,
-    FinderComponent
+    FinderComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule,

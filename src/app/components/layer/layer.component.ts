@@ -1,12 +1,12 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { Map } from 'leaflet';
 import * as carto from '@carto/carto.js';
-import * as L from 'leaflet';
 import { PopUpService } from '../../services/pop-up.service';
 
 @Component({
   selector: 'app-layer',
-  template: ''
+  template: '',
+  styleUrls: ['./layer.component.scss']
 })
 export class LayerComponent implements OnInit, OnChanges {
   @Input() map: Map;

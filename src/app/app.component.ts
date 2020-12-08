@@ -29,7 +29,6 @@ export class AppComponent {
       marker-line-width: 1;
       marker-line-color: #FFF;
       marker-line-opacity: 1;
-      // marker-comp-op: multiply;
 
       [zoom < 7]{ marker-width: 2; }
       [zoom >= 8]{ marker-width: 8; }
@@ -51,10 +50,6 @@ export class AppComponent {
   public submitValue($event): void {
     this.searchValue = $event;
     this.pointsLayerSource = this.queryByName($event);
-  }
-
-  clickHandler(e): void {
-    console.log('clicked', e)
   }
 
   private queryByName(name: string): string {
