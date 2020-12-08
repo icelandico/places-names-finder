@@ -58,6 +58,7 @@ export class LayerComponent implements OnInit, OnChanges {
   ngOnChanges(): void {
     if (!this.layer) return;
     this.cartoSource.setQuery(this.layerSource);
+    console.log(new carto.source.SQL(this.layerSource))
 
     this.cartoCSS.setContent(this.layerStyle)
       .then(() => this.layer.show());

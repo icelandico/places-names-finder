@@ -16,7 +16,7 @@ export class AppComponent {
   searchValue: string;
   layerStyle = `
     #layer {
-      polygon-fill: rgba(22, 33, 44, 1);
+      polygon-fill: rgba(22, 33, 44, 0.5);
     }
   `;
 
@@ -54,9 +54,9 @@ export class AppComponent {
 
   private queryByName(name: string): string {
     return `
-    SELECT * FROM pl_points
-    WHERE lower(naz_glowna)
-    LIKE '%${name.toLowerCase()}%' `;
+      SELECT * FROM pl_points
+      WHERE lower(naz_glowna)
+      LIKE '%${name.toLowerCase()}%' `;
   }
 
   private getAllPoints(): string {
