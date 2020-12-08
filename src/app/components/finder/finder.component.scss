@@ -4,6 +4,7 @@
   justify-content: center;
   background-color: #3b6cee;
   padding: 10px;
+  position: relative;
 }
 
 .c-finder {
@@ -39,4 +40,23 @@
     border: 1px solid #2c3e50;
     color: #2c3e50;
   }
+}
+
+.c-finder__results-number {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #cd9942;
+  width: 150px;
+  padding: 2px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.c-finder__results-text {
+  margin: 5px 0;
 }

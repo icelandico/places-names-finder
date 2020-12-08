@@ -1,4 +1,4 @@
-import {Component, OnInit, Output, EventEmitter, ViewChild, ElementRef} from '@angular/core';
+import {Component, OnInit, Output, EventEmitter, ViewChild, ElementRef, Input} from '@angular/core';
 
 @Component({
   selector: 'app-finder',
@@ -8,6 +8,7 @@ import {Component, OnInit, Output, EventEmitter, ViewChild, ElementRef} from '@a
 export class FinderComponent implements OnInit {
   @Output() searchValue: EventEmitter<string> = new EventEmitter<string>();
   @ViewChild('input') input: ElementRef;
+  @Input() placesNumber: number;
 
   constructor() { }
 

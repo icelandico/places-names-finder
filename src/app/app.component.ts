@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { Map } from 'leaflet';
 import * as carto from '@carto/carto.js';
 import { buildStyle } from './utils/style';
@@ -8,7 +8,7 @@ import { buildStyle } from './utils/style';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   map: Map;
   cartoClient: any;
   layerSource = `SELECT * FROM wojewodztwa`;
@@ -42,6 +42,10 @@ export class AppComponent {
       apiKey: 'default_public',
       username: 'icelandico'
     });
+  }
+
+  ngOnInit(): void {
+    this.fetchPoints('');
   }
 
   public onMapCreated(map): void {
