@@ -7,6 +7,7 @@ import { WidgetComponent } from './components/widget/widget.component';
 import { MapComponent } from './components/map/map.component';
 import { BasemapComponent } from './components/basemap/basemap.component';
 import { FinderComponent } from './components/finder/finder.component';
+import { PopUpService } from './services/pop-up.service';
 
 @NgModule({
   declarations: [
@@ -18,9 +19,11 @@ import { FinderComponent } from './components/finder/finder.component';
     FinderComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
   ],
-  providers: [],
+  providers: [
+    PopUpService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { Map } from 'leaflet';
 import * as carto from '@carto/carto.js';
+import * as L from 'leaflet';
+import { PopUpService } from '../../services/pop-up.service';
 
 @Component({
   selector: 'app-layer',
@@ -16,7 +18,9 @@ export class LayerComponent implements OnInit, OnChanges {
   cartoSource: any;
   cartoCSS: any;
 
-  constructor() {}
+  constructor(
+    private popupService: PopUpService
+  ) {}
 
   ngOnInit(): void {
     if (!this.layerSource || !this.layerStyle) return;
@@ -44,12 +48,16 @@ export class LayerComponent implements OnInit, OnChanges {
   }
 
   addClickListener(layer): void {
-    layer._id === 'L2' && layer.on('featureClicked', featureEvent => console.log(featureEvent));
+    layer._id === 'L2' && layer.on('featureClicked', featureEvent => this.openPopup(featureEvent));
+  }
+
+  openPopup(featureEvent): void {
+      this.popupService.createPlacePopup(featureEvent, this.map);
   }
 
   ngOnChanges(): void {
     if (!this.layer) return;
-    this.cartoSource.setQuery(this.layerSource)
+    this.cartoSource.setQuery(this.layerSource);
 
     this.cartoCSS.setContent(this.layerStyle)
       .then(() => this.layer.show());
