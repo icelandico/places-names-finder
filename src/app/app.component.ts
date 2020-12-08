@@ -14,6 +14,7 @@ export class AppComponent {
   layerSource = `SELECT * FROM wojewodztwa`;
   pointsLayerSource = this.getAllPoints();
   searchValue: string;
+  placesNumber: number;
   layerStyle = `
     #layer {
       polygon-fill: rgba(22, 33, 44, 0.5);
@@ -50,6 +51,14 @@ export class AppComponent {
   public submitValue($event): void {
     this.searchValue = $event;
     this.pointsLayerSource = this.queryByName($event);
+    this.fetchPoints($event);
+  }
+
+  private async fetchPoints(phrase): Promise<any> {
+    const url = await fetch(`https://icelandico.carto.com/api/v2/sql?q=SELECT * FROM pl_points WHERE naz_glowna LIKE '%25${phrase}%25'`);
+    const res = await url.json();
+
+    this.placesNumber = res.total_rows;
   }
 
   private queryByName(name: string): string {
