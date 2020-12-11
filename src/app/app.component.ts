@@ -62,8 +62,8 @@ export class AppComponent implements OnInit {
     const url = encodeURI(`https://icelandico.carto.com/api/v2/sql?q=SELECT * FROM pl_points WHERE lower(naz_glowna) LIKE '%${phrase.toLowerCase()}%'`);
     const urlFetch = await fetch(url);
     const res = await urlFetch.json();
-
     this.placesNumber = res.total_rows;
+    console.log(this.placesNumber)
   }
 
   private queryByName(name: string): string {

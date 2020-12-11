@@ -10,7 +10,7 @@ export class FinderComponent implements OnInit {
   @ViewChild('input') input: ElementRef;
   @Input() placesNumber: number;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void { }
 
