@@ -2,6 +2,22 @@
   <input #input class="c-finder" (keydown.enter)="onSubmit()" type="text" placeholder="Type place name, ending, beginning..."/>
   <button class="c-finder__button c-finder__search" type="submit" (click)="onSubmit()">Search</button>
   <button class="c-finder__button c-finder__input-clear" type="button" (click)="onSubmit('clear')">Show all places</button>
+  <div class="c-finder__options">
+    <div class="c-finder__option">
+      <input type="radio" name="option" id="option-free" value="all" class="c-finder__option c-finder__option-search-free" (change)="onChange($event)" checked/>
+      <label for="option-free">Search everything</label>
+    </div>
+
+    <div class="c-finder__option">
+      <input type="radio" name="option" id="option-ending" value="end" class="c-finder__option c-finder__option-search-ending" (change)="onChange($event)"/>
+      <label for="option-ending">Endings only</label>
+    </div>
+
+    <div class="c-finder__option">
+      <input type="radio" name="option" id="option-beginning" value="start" class="c-finder__option c-finder__option-search-beginning" (change)="onChange($event)"/>
+      <label for="option-beginning">Beginnings only</label>
+    </div>
+  </div>
 
   <div class="c-finder__results-number">
     <p class="c-finder__results-text">Places found</p>

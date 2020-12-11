@@ -60,3 +60,13 @@
 .c-finder__results-text {
   margin: 5px 0;
 }
+
+.c-finder__options {
+  display: flex;
+  flex-direction: column;
+}
+
+.c-finder__option {
+  color: #fff;
+  margin-bottom: 2px;
+}
