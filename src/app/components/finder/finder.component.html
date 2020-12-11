@@ -1,12 +1,12 @@
 <div class="c-finder__container">
-  <div class="c-finder__results-number">
+  <div class="c-finder__item c-finder__results-number">
     <p class="c-finder__results-text">Places found</p>
     <p class="c-finder__results-text c-finder__results-text--bold">{{ placesNumber >= 0 ? placesNumber : 'Counting...' }}</p>
   </div>
-  <input #input class="c-finder" (keydown.enter)="onSubmit()" type="text" placeholder="Type place name..."/>
-  <button class="c-finder__button c-finder__search" type="submit" (click)="onSubmit()">Search</button>
-  <button class="c-finder__button c-finder__input-clear" type="button" (click)="onSubmit('clear')">Show all places</button>
-  <div class="c-finder__options">
+  <input #input class="c-finder c-finder__item" (keydown.enter)="onSubmit()" type="text" placeholder="Type place name..."/>
+  <button class="c-finder__button c-finder__search c-finder__item" type="submit" (click)="onSubmit()">Search</button>
+  <button class="c-finder__button c-finder__input-clear c-finder__item" type="button" (click)="onSubmit('clear')">Show all places</button>
+  <div class="c-finder__options c-finder__item">
     <div class="c-finder__option">
       <input type="radio" name="option" id="option-free" value="all" class="c-finder__option c-finder__option-search-free" (change)="onChange($event)" checked/>
       <label for="option-free">Search everything</label>
