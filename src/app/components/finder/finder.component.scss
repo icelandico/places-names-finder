@@ -43,11 +43,7 @@
 }
 
 .c-finder__results-number {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #e97311;
+  background-color: #5476c4;
   width: 150px;
   padding: 2px;
   text-align: center;
@@ -55,10 +51,17 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  color: #fff;
+  margin-right: 1rem;
+  border-radius: 5px;
 }
 
 .c-finder__results-text {
   margin: 5px 0;
+
+  &--bold {
+    font-weight: bold;
+  }
 }
 
 .c-finder__options {
