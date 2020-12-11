@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   layerSource = `SELECT * FROM wojewodztwa`;
   pointsLayerSource = this.getAllPoints();
   searchValue: string;
+  optionValue: string;
   placesNumber: number;
   layerStyle = `
     #layer {
@@ -54,8 +55,25 @@ export class AppComponent implements OnInit {
 
   public submitValue($event): void {
     this.searchValue = $event;
-    this.pointsLayerSource = this.queryByName($event);
+    this.pointsLayerSource = this.querySource($event);
     this.fetchPoints($event);
+  }
+
+  public handleOption($event): void {
+    this.optionValue = $event;
+  }
+
+  private querySource($event): string {
+    switch (this.optionValue) {
+      case 'start':
+        return this.queryStart($event);
+        break;
+      case 'end':
+        return this.queryEndings($event);
+        break;
+      default:
+        return this.queryAll($event);
+    }
   }
 
   private async fetchPoints(phrase): Promise<any> {
@@ -63,14 +81,27 @@ export class AppComponent implements OnInit {
     const urlFetch = await fetch(url);
     const res = await urlFetch.json();
     this.placesNumber = res.total_rows;
-    console.log(this.placesNumber)
   }
 
-  private queryByName(name: string): string {
+  private queryAll(name: string): string {
     return `
       SELECT * FROM pl_points
       WHERE lower(naz_glowna)
       LIKE '%${name.toLowerCase()}%' `;
+  }
+
+  private queryEndings(name): string {
+    return `
+      SELECT * FROM pl_points
+      WHERE lower(naz_glowna)
+      LIKE '%${name.toLowerCase()}' `;
+  }
+
+  private queryStart(name): string {
+    return `
+      SELECT * FROM pl_points
+      WHERE lower(naz_glowna)
+      LIKE '${name.toLowerCase()}%' `;
   }
 
   private getAllPoints(): string {
