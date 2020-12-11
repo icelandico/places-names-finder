@@ -77,7 +77,7 @@ export class AppComponent implements OnInit {
   }
 
   private async fetchPoints(phrase): Promise<any> {
-    const url = encodeURI(`https://icelandico.carto.com/api/v2/sql?q=SELECT * FROM pl_points WHERE lower(naz_glowna) LIKE '%${phrase.toLowerCase()}%'`);
+    const url = encodeURI(`https://icelandico.carto.com/api/v2/sql?q=${this.querySource(phrase)}`);
     const urlFetch = await fetch(url);
     const res = await urlFetch.json();
     this.placesNumber = res.total_rows;
