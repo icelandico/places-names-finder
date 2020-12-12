@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
   layerStyle = `
     #layer {
       polygon-fill: rgba(22, 33, 44, 0.5);
+      line-color: rgba(224, 216, 214, 1);
     }
   `;
 
