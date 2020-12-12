@@ -22,4 +22,12 @@
       <label for="option-beginning">{{ 'search beginnings' | translate }}</label>
     </div>
   </div>
+
+  <div class="c-language__options">
+    <select (change)="onLangChange($event)">
+      <option value="pl">Polish</option>
+      <option value="en" selected>English</option>
+    </select>
+  </div>
 </div>
+

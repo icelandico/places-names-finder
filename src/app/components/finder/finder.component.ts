@@ -34,4 +34,9 @@ export class FinderComponent implements OnInit {
     this.optionValue.emit(e.target.value);
   }
 
+  onLangChange(event: Event): void {
+      const eventValue = event.target as HTMLSelectElement;
+      this._translate.use(eventValue.value);
+    }
 }
+
