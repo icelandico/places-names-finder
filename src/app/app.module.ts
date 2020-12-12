@@ -9,6 +9,9 @@ import { BasemapComponent } from './components/basemap/basemap.component';
 import { FinderComponent } from './components/finder/finder.component';
 import { PopUpService } from './services/pop-up.service';
 import { PopupComponent } from './components/popup/popup.component';
+import { TRANSLATION_PROVIDERS } from './translate';
+import { TranslateService } from './translate/translate.service';
+import { TranslatePipe } from './translate/translate.pipe';
 
 @NgModule({
   declarations: [
@@ -18,13 +21,16 @@ import { PopupComponent } from './components/popup/popup.component';
     MapComponent,
     BasemapComponent,
     FinderComponent,
-    PopupComponent
+    PopupComponent,
+    TranslatePipe,
   ],
   imports: [
     BrowserModule,
   ],
   providers: [
-    PopUpService
+    PopUpService,
+    TranslateService,
+    TRANSLATION_PROVIDERS
   ],
   bootstrap: [AppComponent]
 })
