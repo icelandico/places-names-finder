@@ -11,12 +11,14 @@ export class FinderComponent implements OnInit {
   @Output() optionValue: EventEmitter<string> = new EventEmitter<string>();
   @ViewChild('input') input: ElementRef;
   @Input() placesNumber: number;
+  initialLang: string;
 
   constructor(
     private _translate: TranslateService
   ) {}
 
   ngOnInit(): void {
+    this.initialLang = this._translate.currentLang;
   }
 
   onSubmit(param?: string): void {
@@ -37,6 +39,7 @@ export class FinderComponent implements OnInit {
   onLangChange(event: Event): void {
       const eventValue = event.target as HTMLSelectElement;
       this._translate.use(eventValue.value);
+      this._translate.setLangInStorage(eventValue.value);
     }
 }
 

@@ -24,9 +24,9 @@
   </div>
 
   <div class="c-language__options">
-    <select (change)="onLangChange($event)">
+    <select class="c-language__select" (change)="onLangChange($event)" [value]="initialLang">
       <option value="pl">Polish</option>
-      <option value="en" selected>English</option>
+      <option value="en">English</option>
     </select>
   </div>
 </div>

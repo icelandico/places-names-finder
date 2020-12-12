@@ -3,10 +3,20 @@ import { TRANSLATIONS } from './index';
 
 @Injectable()
 export class TranslateService {
-  private _currentLang = 'en';
+  private _currentLang = this.setInitialLanguage();
 
   public get currentLang(): string {
     return this._currentLang;
+  }
+
+  setInitialLanguage(): string {
+    const storageValue = window.localStorage.getItem('lang');
+    return storageValue || 'en';
+  }
+
+  setLangInStorage(lang): void {
+    console.log(lang)
+    window.localStorage.setItem('lang', lang);
   }
 
   constructor(
