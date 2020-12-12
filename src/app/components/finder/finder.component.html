@@ -1,27 +1,25 @@
 <div class="c-finder__container">
   <div class="c-finder__item c-finder__results-number">
-    <p class="c-finder__results-text">Places found</p>
+    <p class="c-finder__results-text">{{ 'search results' | translate }}</p>
     <p class="c-finder__results-text c-finder__results-text--bold">{{ placesNumber >= 0 ? placesNumber : 'Counting...' }}</p>
   </div>
-  <input #input class="c-finder c-finder__item" (keydown.enter)="onSubmit()" type="text" placeholder="Type place name..."/>
-  <button class="c-finder__button c-finder__search c-finder__item" type="submit" (click)="onSubmit()">Search</button>
-  <button class="c-finder__button c-finder__input-clear c-finder__item" type="button" (click)="onSubmit('clear')">Show all places</button>
+  <input #input class="c-finder c-finder__item" (keydown.enter)="onSubmit()" type="text" placeholder="{{ 'place name' | translate }}"/>
+  <button class="c-finder__button c-finder__search c-finder__item" type="submit" (click)="onSubmit()">{{ 'search' | translate }}</button>
+  <button class="c-finder__button c-finder__input-clear c-finder__item" type="button" (click)="onSubmit('clear')">{{ 'show all' | translate }}</button>
   <div class="c-finder__options c-finder__item">
     <div class="c-finder__option">
       <input type="radio" name="option" id="option-free" value="all" class="c-finder__option c-finder__option-search-free" (change)="onChange($event)" checked/>
-      <label for="option-free">Search everything</label>
+      <label for="option-free">{{ 'search everything' | translate }}</label>
     </div>
 
     <div class="c-finder__option">
       <input type="radio" name="option" id="option-ending" value="end" class="c-finder__option c-finder__option-search-ending" (change)="onChange($event)"/>
-      <label for="option-ending">Ending with</label>
+      <label for="option-ending">{{ 'search endings' | translate }}</label>
     </div>
 
     <div class="c-finder__option">
       <input type="radio" name="option" id="option-beginning" value="start" class="c-finder__option c-finder__option-search-beginning" (change)="onChange($event)"/>
-      <label for="option-beginning">Starting with</label>
+      <label for="option-beginning">{{ 'search beginnings' | translate }}</label>
     </div>
   </div>
-  <p>Translate With Pipe: <strong>{{ 'hello world' | translate }}</strong></p>
-<!--  Translate with Service: <strong>{{ translatedText }}</strong>-->
 </div>

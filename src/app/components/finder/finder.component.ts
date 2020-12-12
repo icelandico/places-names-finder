@@ -11,17 +11,12 @@ export class FinderComponent implements OnInit {
   @Output() optionValue: EventEmitter<string> = new EventEmitter<string>();
   @ViewChild('input') input: ElementRef;
   @Input() placesNumber: number;
-  public supportedLanguages: any[];
 
   constructor(
     private _translate: TranslateService
   ) {}
 
   ngOnInit(): void {
-    this.supportedLanguages = [
-      { display: 'English', value: 'en' },
-      { display: 'Polish', value: 'pl' },
-    ];
   }
 
   onSubmit(param?: string): void {
