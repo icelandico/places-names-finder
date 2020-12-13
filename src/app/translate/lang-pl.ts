@@ -11,5 +11,13 @@ export const LANG_PL_TRANS = {
   'search beginnings': 'Tylko początki',
   'no results': 'Brak wyników',
   'author': 'Autor',
+  'powiat': 'Powiat',
+  'wojewodztwo': 'Województwo',
+  'typ miejscowosci': 'Typ miejscowości',
+  'wies': 'wieś',
+  'miasto': 'miasto',
+  'osada lesna': 'osada leśna',
+  'osada': 'osada',
+  'kolonia': 'kolonia',
 };
 

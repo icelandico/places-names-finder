@@ -11,4 +11,12 @@ export const LANG_EN_TRANS = {
   'search beginnings': 'Prefix only',
   'no results': 'No results',
   'author': 'Author',
+  'powiat': 'Powiat/County',
+  'wojewodztwo': 'Voivodeship',
+  'typ miejscowosci': 'Settlement type',
+  'wies': 'Village',
+  'miasto': 'City',
+  'osada lesna': 'Forest hamlet',
+  'osada': 'Hamlet',
+  'kolonia': 'Hamlet colony',
 };
