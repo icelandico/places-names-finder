@@ -91,6 +91,10 @@
   width: 40%;
   margin-bottom: 0;
 
+  &.c-finder__no-results {
+    background-color: #af5e66;
+  }
+
   @media (min-width: 768px) {
     position: unset;
     margin-right: 1rem;
