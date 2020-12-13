@@ -4,6 +4,7 @@ export const LANG_PL_TRANS = {
   'place name': 'Wpisz frazę',
   'search results': 'Znaleziono',
   'search': 'Szukaj',
+  'counting': 'Szukam...',
   'show all': 'Pokaż wszystkie',
   'search everything': 'Szukaj wszystko',
   'search endings': 'Tylko końcówki',
