@@ -10,7 +10,7 @@ import { FinderComponent } from './components/finder/finder.component';
 import { PopUpService } from './services/pop-up.service';
 import { PopupComponent } from './components/popup/popup.component';
 import { TRANSLATION_PROVIDERS } from './translate';
-import { TranslateService } from './translate/translate.service';
+import { TranslateService } from './services/translate.service';
 import { TranslatePipe } from './translate/translate.pipe';
 
 @NgModule({

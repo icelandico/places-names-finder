@@ -7,7 +7,7 @@ export const LANG_PL_TRANS = {
   'show all': 'Pokaż wszystkie',
   'search everything': 'Szukaj wszystko',
   'search endings': 'Tylko końcówki',
-  'search beginnings': 'Tylko początek',
+  'search beginnings': 'Tylko początki',
   'no results': 'Brak wyników',
 };
 

@@ -1,5 +1,5 @@
 import { Injectable, Inject } from '@angular/core';
-import { TRANSLATIONS } from './index';
+import { TRANSLATIONS } from '../translate';
 
 @Injectable()
 export class TranslateService {

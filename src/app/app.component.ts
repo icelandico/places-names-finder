@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { Map } from 'leaflet';
 import * as carto from '@carto/carto.js';
-import { buildStyle } from './utils/style';
 
 @Component({
   selector: 'app-root',
@@ -107,9 +106,5 @@ export class AppComponent implements OnInit {
 
   private getAllPoints(): string {
     return `SELECT * FROM pl_points`;
-  }
-
-  public onWidgetDataChanged(data): void {
-    this.layerStyle = buildStyle(data, ['#fcde9c', '#faa476', '#f0746e', '#e34f6f', '#dc3977', '#b9257a', '#7c1d6f']);
   }
 }
