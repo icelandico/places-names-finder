@@ -9,4 +9,5 @@ export const LANG_EN_TRANS = {
   'search endings': 'Suffix only',
   'search beginnings': 'Prefix only',
   'no results': 'No results',
+  'author': 'Author',
 };

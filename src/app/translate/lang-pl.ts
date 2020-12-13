@@ -9,5 +9,6 @@ export const LANG_PL_TRANS = {
   'search endings': 'Tylko końcówki',
   'search beginnings': 'Tylko początki',
   'no results': 'Brak wyników',
+  'author': 'Autor',
 };
 

@@ -15,7 +15,6 @@ export class TranslateService {
   }
 
   setLangInStorage(lang): void {
-    console.log(lang)
     window.localStorage.setItem('lang', lang);
   }
 

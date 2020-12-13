@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Map } from 'leaflet';
+import { TranslateService } from '../../services/translate.service';
 
 @Component({
   selector: 'app-carto-map',
@@ -13,7 +14,9 @@ export class MapComponent implements OnInit {
   @Input() zoom;
   @Output() onMapCreated: EventEmitter<any> = new EventEmitter();
 
-  constructor() {}
+  constructor(
+    private _translate: TranslateService
+  ) {}
 
   ngOnInit(): void {
     this.map = new Map('map', {

@@ -7,3 +7,29 @@
   height: 100%;
 }
 
+.c-widget__author {
+  position: fixed;
+  bottom: 2%;
+  left: 10px;
+  background-color: #426ac4;
+  border: 0 solid #2c3e50;
+  border-radius: 5px;
+  padding: 0.5rem;
+  z-index: 500;
+  cursor: pointer;
+
+  &:hover{
+    background-color: #fff;
+    border: 1px solid #2c3e50;
+  }
+
+  &:hover a {
+    color: #2c3e50;
+  }
+}
+
+.c-widget__author-link {
+  text-decoration: none;
+  color: #fff;
+}
+

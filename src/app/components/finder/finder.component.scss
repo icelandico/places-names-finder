@@ -82,14 +82,14 @@
 
 .c-finder__results-number {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  bottom: 2%;
   background-color: #5476c4;
   padding: 2px;
   text-align: center;
   z-index: 450;
   color: #fff;
+  width: 40%;
+  margin-bottom: 0;
 
   @media (min-width: 768px) {
     position: unset;
