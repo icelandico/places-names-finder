@@ -13,6 +13,7 @@ import { TRANSLATION_PROVIDERS } from './translate';
 import { TranslateService } from './services/translate.service';
 import { TranslatePipe } from './translate/translate.pipe';
 import { PredefinedOptionsComponent } from './components/predefinedOptions/predefinedOptions.component';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -24,10 +25,11 @@ import { PredefinedOptionsComponent } from './components/predefinedOptions/prede
     FinderComponent,
     PopupComponent,
     TranslatePipe,
-    PredefinedOptionsComponent
+    PredefinedOptionsComponent,
   ],
   imports: [
     BrowserModule,
+    FormsModule
   ],
   providers: [
     PopUpService,

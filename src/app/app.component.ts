@@ -53,7 +53,8 @@ export class AppComponent implements OnInit {
     this.map = map;
   }
 
-  public submitValue($event): void {
+  public submitValue($event, predefined?): void {
+    if (predefined) this.optionValue = 'end';
     this.searchValue = $event;
     this.pointsLayerSource = this.querySource($event);
     this.fetchPoints($event);

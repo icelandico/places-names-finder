@@ -9,6 +9,7 @@ import { TranslateService } from '../../services/translate.service';
 export class FinderComponent implements OnInit {
   @Output() searchValue: EventEmitter<string> = new EventEmitter<string>();
   @Output() optionValue: EventEmitter<string> = new EventEmitter<string>();
+  @Input() activeOption = 'end';
   @ViewChild('input') input: ElementRef;
   @Input() placesNumber: number;
   initialLang: string;
