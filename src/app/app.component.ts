@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { Map } from 'leaflet';
 import * as carto from '@carto/carto.js';
 
@@ -12,8 +12,8 @@ export class AppComponent implements OnInit {
   cartoClient: any;
   layerSource = `SELECT * FROM wojewodztwa`;
   pointsLayerSource = this.getAllPoints();
-  searchValue: string;
-  optionValue: string;
+  searchValue = '';
+  optionValue = 'all';
   placesNumber: number;
   layerStyle = `
     #layer {
@@ -54,7 +54,24 @@ export class AppComponent implements OnInit {
   }
 
   public submitValue($event, predefined?): void {
-    if (predefined) this.optionValue = 'end';
+    if (predefined) {
+      let newValue = '';
+      if ($event[0] === '-') {
+        this.optionValue = 'end';
+        newValue = $event.slice(1);
+      } else if ($event[$event.length - 1] === '-') {
+        this.optionValue = 'start';
+        newValue = $event.slice(0, $event.length - 1);
+      } else {
+        this.optionValue = 'all';
+        newValue = $event;
+      }
+      this.searchValue = newValue;
+      this.pointsLayerSource = this.querySource(newValue);
+      this.fetchPoints(newValue);
+      return;
+    }
+
     this.searchValue = $event;
     this.pointsLayerSource = this.querySource($event);
     this.fetchPoints($event);

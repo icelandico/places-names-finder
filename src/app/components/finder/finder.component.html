@@ -5,7 +5,7 @@
     <p class="c-finder__results-text">{{ 'search results' | translate }}</p>
     <p class="c-finder__results-text c-finder__results-text--bold">{{ placesNumber >= 0 ? placesNumber : ('counting' | translate) }}</p>
   </div>
-  <input #input class="c-finder c-finder__item" (keydown.enter)="onSubmit()" type="text" placeholder="{{ 'place name' | translate }}"/>
+  <input #input class="c-finder c-finder__item" (keydown.enter)="onSubmit()" type="text" placeholder="{{ 'place name' | translate }}" [value]="searchPhrase"/>
   <button class="c-finder__button c-finder__search c-finder__item" type="submit" (click)="onSubmit()">{{ 'search' | translate }}</button>
   <button class="c-finder__button c-finder__input-clear c-finder__item" type="button" (click)="onSubmit('clear')">{{ 'show all' | translate }}</button>
   <div class="c-finder__options c-finder__item">
