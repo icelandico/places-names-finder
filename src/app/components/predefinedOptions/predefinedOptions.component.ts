@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { TranslateService } from '../../services/translate.service';
 
 @Component({
   selector: 'app-predefined-options',

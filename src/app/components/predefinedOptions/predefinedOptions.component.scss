@@ -2,11 +2,16 @@
   position: fixed;
   top: 150px;
   right: 1%;
+  max-width: 200px;
   padding: 0.5rem 1rem;
   background-color: #426ac4;
   border-radius: 5px;
   color: #fff;
   z-index: 450;
+}
+
+.c-options__title {
+  margin: 8px 0;
 }
 
 .c-options__select {

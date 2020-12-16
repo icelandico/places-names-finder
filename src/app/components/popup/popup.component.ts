@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {TranslateService} from '../../services/translate.service';
 
 @Component({
   selector: 'app-popup',
@@ -8,7 +9,9 @@ import {Component, Input, OnInit} from '@angular/core';
 export class PopupComponent implements OnInit {
   @Input() data = {};
 
-  constructor() {
+  constructor(
+    private _translate: TranslateService
+  ) {
 
   }
 

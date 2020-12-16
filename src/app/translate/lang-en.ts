@@ -19,4 +19,5 @@ export const LANG_EN_TRANS = {
   'osada lesna': 'Forest hamlet',
   'osada': 'Hamlet',
   'kolonia': 'Hamlet colony',
+  'predefined phrases': 'Use predefined phrases'
 };
