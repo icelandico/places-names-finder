@@ -1,6 +1,6 @@
 .c-options__container {
   position: fixed;
-  top: 150px;
+  top: 250px;
   right: 1%;
   max-width: 200px;
   padding: 0.5rem 1rem;
@@ -8,6 +8,11 @@
   border-radius: 5px;
   color: #fff;
   z-index: 450;
+
+  @media (min-width: 768px) {
+    top: 100px;
+    right: 1%;
+  }
 }
 
 .c-options__title {
@@ -17,6 +22,10 @@
 .c-options__select {
   padding: 3px;
   font-size: 16px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 }
 
 .c-options__option {
