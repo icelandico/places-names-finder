@@ -12,6 +12,7 @@ import { PopupComponent } from './components/popup/popup.component';
 import { TRANSLATION_PROVIDERS } from './translate';
 import { TranslateService } from './services/translate.service';
 import { TranslatePipe } from './translate/translate.pipe';
+import { PredefinedOptionsComponent } from './components/predefinedOptions/predefinedOptions.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { TranslatePipe } from './translate/translate.pipe';
     FinderComponent,
     PopupComponent,
     TranslatePipe,
+    PredefinedOptionsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 <main>
   <app-finder [placesNumber]="placesNumber" (searchValue)="submitValue($event)" (optionValue)="handleOption($event)"></app-finder>
+  <app-predefined-options></app-predefined-options>
   <app-carto-map [center]="[52, 19]" zoom="7" (onMapCreated)="onMapCreated($event)">
     <app-basemap
       [map]="map"
