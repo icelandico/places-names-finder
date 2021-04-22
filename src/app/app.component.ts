@@ -1,6 +1,7 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, OnInit } from '@angular/core';
 import { Map } from 'leaflet';
 import * as carto from '@carto/carto.js';
+import { environment } from "../environments/environment"
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ export class AppComponent implements OnInit {
   cartoClient: any;
   layerSource = `SELECT * FROM wojewodztwa`;
   pointsLayerSource = this.getAllPoints();
+  linesLayersSource = this.getAllLines();
   searchValue = '';
   optionValue = 'all';
   placesNumber: number;
@@ -38,10 +40,23 @@ export class AppComponent implements OnInit {
     }
   `;
 
+  linesLayerStyle = `
+    #layer {
+      line-width: 5;
+      line-join: miter;
+      line-color: #FFF;
+      line-opacity: 1;
+
+      [zoom < 7]{ line-width: 2; }
+      [zoom >= 8]{ line-width: 8; }
+      [zoom >= 10]{ line-width: 11; }
+    }
+  `;
+
   constructor() {
     this.cartoClient = new carto.Client({
-      apiKey: 'default_public',
-      username: 'icelandico'
+      apiKey: environment.apiKey,
+      username:  environment.username
     });
   }
 
@@ -124,5 +139,9 @@ export class AppComponent implements OnInit {
 
   private getAllPoints(): string {
     return `SELECT * FROM pl_points`;
+  }
+
+  private getAllLines(): string {
+    return `SELECT * FROM rivers_pl`;
   }
 }
