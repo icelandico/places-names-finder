@@ -1,0 +1,39 @@
+<div class="c-options__container">
+<div class="c-finder__options c-finder__item">
+  <div class="c-finder__option">
+    <input type="radio"
+           name="option"
+           id="option-free"
+           value="all"
+           class="c-finder__option c-finder__option-search-free"
+           (change)="onChange($event)"
+           [checked]="activeOption === 'all'"
+    />
+    <label for="option-free">{{ 'search everything' | translate }}</label>
+  </div>
+
+  <div class="c-finder__option">
+    <input type="radio"
+           name="option"
+           id="option-ending"
+           value="end"
+           class="c-finder__option c-finder__option-search-ending"
+           (change)="onChange($event)"
+           [checked]="activeOption === 'end'"
+    />
+    <label for="option-ending">{{ 'search endings' | translate }}</label>
+  </div>
+
+  <div class="c-finder__option">
+    <input type="radio"
+           name="option"
+           id="option-beginning"
+           value="start"
+           class="c-finder__option c-finder__option-search-beginning"
+           (change)="onChange($event)"
+           [checked]="activeOption === 'start'"
+    />
+    <label for="option-beginning">{{ 'search beginnings' | translate }}</label>
+  </div>
+</div>
+</div>

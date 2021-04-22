@@ -14,6 +14,7 @@ import { TranslateService } from './services/translate.service';
 import { TranslatePipe } from './translate/translate.pipe';
 import { PredefinedOptionsComponent } from './components/predefinedOptions/predefinedOptions.component';
 import { FormsModule } from "@angular/forms";
+import {SearchOptionsComponent} from "./components/searchOptions/searchOptions.component";
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { FormsModule } from "@angular/forms";
     MapComponent,
     BasemapComponent,
     FinderComponent,
+    SearchOptionsComponent,
     PopupComponent,
     TranslatePipe,
     PredefinedOptionsComponent,

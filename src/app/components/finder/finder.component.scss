@@ -1,76 +1,55 @@
+@import "../../../variables";
+
 .c-finder__container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-column-gap: 10px;
-  align-items: center;
-  justify-content: center;
-  background-color: #426ac4;
+  position: absolute;
+  top: 10px;
+  left: 10%;
+  z-index: 450;
   padding: 10px;
-  position: relative;
 
-  @media (min-width: 768px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  }
-
-  @media (min-width: 1280px) {
-    display: flex;
-  }
 }
 
 .c-finder {
   flex-basis: 25%;
   height: 40px;
   font-size: 18px;
-  border-radius: 5px;
+  border-radius: 0;
   border: 1px solid #fff;
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-  margin-right: 20px;
   padding: 10px;
   width: 100%;
 
-  &:focus {
-    outline: none;
-    border-color: #2c3e50;
-    box-shadow: 0 0 0 1px #2c3e50;
-  }
-
   @media (min-width: 768px) {
     padding: 0 0 0 10px;
-    order: unset;
     width: auto;
   }
-}
 
-.c-finder__search {
-  order: 4;
-  @media (min-width: 768px) {
-    order: unset;
+  &:focus {
+    outline: none;
   }
 }
 
-.c-finder__input-clear {
-  order: 3;
+.c-finder__input {
+  border-radius: 5px;
 
-  @media (min-width: 768px) {
-    order: unset;
+  &--focus {
+    box-shadow: 0 3px 5px 0 rgba($color-black, 0.25);
   }
 }
 
 .c-finder__button {
   height: 40px;
-  border-radius: 5px;
-  border: 1px solid #fff;
+  border-radius: 0;
+  border: none;
   background-color: #426ac4;
   cursor: pointer;
   color: #fff;
-  font-size: 16px;
-  margin-right: 20px;
+  font-size: 18px;;
   width: 100%;
 
   &:hover {
-    background-color: #fff;
-    border: 1px solid #2c3e50;
-    color: #2c3e50;
+    background-color: #5476c4;
+    color: #fff;
   }
 
   @media (min-width: 768px) {
@@ -86,9 +65,6 @@
 }
 
 .c-finder__results-number {
-  position: fixed;
-  bottom: 2%;
-  left: 33%;
   background-color: #5476c4;
   padding: 2px;
   text-align: center;
@@ -102,12 +78,6 @@
   }
 
   @media (min-width: 768px) {
-    position: unset;
-    margin-right: 1rem;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
     width: 130px;
     border-radius: 5px;
   }

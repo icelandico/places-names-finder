@@ -14,6 +14,7 @@ export class FinderComponent implements OnInit {
   @ViewChild('input') input: ElementRef;
   @Input() placesNumber: number;
   initialLang: string;
+  inputFocused = false;
 
   constructor(
     private _translate: TranslateService
@@ -21,6 +22,11 @@ export class FinderComponent implements OnInit {
 
   ngOnInit(): void {
     this.initialLang = this._translate.currentLang;
+  }
+
+  handleFocus(): void {
+    console.log('focus', this.inputFocused)
+    this.inputFocused = !this.inputFocused;
   }
 
   onSubmit(param?: string): void {

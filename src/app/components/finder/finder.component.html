@@ -1,56 +1,20 @@
 <div class="c-finder__container">
-  <div class="c-finder__item c-finder__results-number"
-      [ngClass]="placesNumber === 0 ? 'c-finder__no-results' : ''"
-  >
-    <p class="c-finder__results-text">{{ 'search results' | translate }}</p>
-    <p class="c-finder__results-text c-finder__results-text--bold">{{ placesNumber >= 0 ? placesNumber : ('counting' | translate) }}</p>
+<!--  <div class="c-finder__item c-finder__results-number"-->
+<!--      [ngClass]="placesNumber === 0 ? 'c-finder__no-results' : ''"-->
+<!--  >-->
+<!--    <p class="c-finder__results-text">{{ 'search results' | translate }}</p>-->
+<!--    <p class="c-finder__results-text c-finder__results-text&#45;&#45;bold">{{ placesNumber >= 0 ? placesNumber : ('counting' | translate) }}</p>-->
+<!--  </div>-->
+  <div class="c-finder__input" [ngClass]="inputFocused ? 'c-finder__input--focus' : ''">
+    <input (focus)="handleFocus()" (blur)="handleFocus()" #input class="c-finder c-finder__item" (keydown.enter)="onSubmit()" type="text" placeholder="{{ 'place name' | translate }}" [value]="searchPhrase"/>
+    <button class="c-finder__button c-finder__search c-finder__item" type="submit" (click)="onSubmit()">{{ 'search' | translate }}</button>
   </div>
-  <input #input class="c-finder c-finder__item" (keydown.enter)="onSubmit()" type="text" placeholder="{{ 'place name' | translate }}" [value]="searchPhrase"/>
-  <button class="c-finder__button c-finder__search c-finder__item" type="submit" (click)="onSubmit()">{{ 'search' | translate }}</button>
-  <button class="c-finder__button c-finder__input-clear c-finder__item" type="button" (click)="onSubmit('clear')">{{ 'show all' | translate }}</button>
-  <div class="c-finder__options c-finder__item">
-    <div class="c-finder__option">
-      <input type="radio"
-             name="option"
-             id="option-free"
-             value="all"
-             class="c-finder__option c-finder__option-search-free"
-             (change)="onChange($event)"
-             [checked]="activeOption === 'all'"
-      />
-      <label for="option-free">{{ 'search everything' | translate }}</label>
-    </div>
-
-    <div class="c-finder__option">
-      <input type="radio"
-             name="option"
-             id="option-ending"
-             value="end"
-             class="c-finder__option c-finder__option-search-ending"
-             (change)="onChange($event)"
-             [checked]="activeOption === 'end'"
-      />
-      <label for="option-ending">{{ 'search endings' | translate }}</label>
-    </div>
-
-    <div class="c-finder__option">
-      <input type="radio"
-             name="option"
-             id="option-beginning"
-             value="start"
-             class="c-finder__option c-finder__option-search-beginning"
-             (change)="onChange($event)"
-             [checked]="activeOption === 'start'"
-      />
-      <label for="option-beginning">{{ 'search beginnings' | translate }}</label>
-    </div>
-  </div>
-
-  <div class="c-language__options">
-    <select class="c-language__select" (change)="onLangChange($event)" [value]="initialLang">
-      <option value="pl">Polski</option>
-      <option value="en">English</option>
-    </select>
-  </div>
+<!--    <button class="c-finder__button c-finder__input-clear c-finder__item" type="button" (click)="onSubmit('clear')">{{ 'show all' | translate }}</button>-->
+<!--  <div class="c-language__options">-->
+<!--    <select class="c-language__select" (change)="onLangChange($event)" [value]="initialLang">-->
+<!--      <option value="pl">Polski</option>-->
+<!--      <option value="en">English</option>-->
+<!--    </select>-->
+<!--  </div>-->
 </div>
 
