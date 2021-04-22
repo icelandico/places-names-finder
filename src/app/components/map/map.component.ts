@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Map } from 'leaflet';
+import { Map, Control } from 'leaflet';
 import { TranslateService } from '../../services/translate.service';
 
 @Component({
@@ -21,7 +21,8 @@ export class MapComponent implements OnInit {
   ngOnInit(): void {
     this.map = new Map('map', {
       center: this.center,
-      zoom: this.zoom
+      zoom: this.zoom,
+      zoomControl: false,
     });
 
     this.onMapCreated.emit(this.map);

@@ -1,0 +1,12 @@
+@import "../../../variables";
+
+.c-options__container {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  background-color: $primary-background;
+  padding: 10px;
+  width: 200px;
+  height: 450px;
+  z-index: $base-zindex;
+}

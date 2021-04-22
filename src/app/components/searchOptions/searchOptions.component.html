@@ -1,4 +1,10 @@
 <div class="c-options__container">
+    <div class="c-finder__item c-finder__results-number"
+        [ngClass]="placesNumber === 0 ? 'c-finder__no-results' : ''"
+    >
+      <p class="c-finder__results-text">{{ 'search results' | translate }}</p>
+      <p class="c-finder__results-text c-finder__results-text--bold">{{ placesNumber >= 0 ? placesNumber : ('counting' | translate) }}</p>
+    </div>
 <div class="c-finder__options c-finder__item">
   <div class="c-finder__option">
     <input type="radio"

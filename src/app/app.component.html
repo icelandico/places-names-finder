@@ -6,6 +6,7 @@
               [searchPhrase]="searchValue"
   >
   </app-finder>
+  <app-search-options></app-search-options>
   <app-predefined-options (searchOption)="submitValue($event, true)"></app-predefined-options>
   <app-carto-map [center]="[52, 19]" zoom="7" (onMapCreated)="onMapCreated($event)">
     <app-basemap
