@@ -1,7 +1,7 @@
 import {Component, OnInit } from '@angular/core';
 import { Map } from 'leaflet';
 import * as carto from '@carto/carto.js';
-import { environment } from "../environments/environment"
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',

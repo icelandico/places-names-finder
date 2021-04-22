@@ -1,6 +1,7 @@
 .c-finder__container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column-gap: 10px;
   align-items: center;
   justify-content: center;
   background-color: #426ac4;
@@ -8,7 +9,11 @@
   position: relative;
 
   @media (min-width: 768px) {
-    flex-direction: row;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  @media (min-width: 1280px) {
+    display: flex;
   }
 }
 
@@ -83,6 +88,7 @@
 .c-finder__results-number {
   position: fixed;
   bottom: 2%;
+  left: 33%;
   background-color: #5476c4;
   padding: 2px;
   text-align: center;
