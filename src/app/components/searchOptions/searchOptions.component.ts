@@ -6,6 +6,7 @@ import { Component, Output, EventEmitter, Input } from '@angular/core';
   styleUrls: ['./searchOptions.component.scss']
 })
 export class SearchOptionsComponent {
+  @Output() searchValue: EventEmitter<string> = new EventEmitter<string>();
   @Output() optionValue: EventEmitter<string> = new EventEmitter<string>();
   @Input() activeOption;
   @Input() searchPhrase;

@@ -1,45 +1,47 @@
 <div class="c-options__container">
-    <div class="c-finder__item c-finder__results-number"
+    <div class="c-options__results-number"
         [ngClass]="placesNumber === 0 ? 'c-finder__no-results' : ''"
     >
-      <p class="c-finder__results-text">{{ 'search results' | translate }}</p>
-      <p class="c-finder__results-text c-finder__results-text--bold">{{ placesNumber >= 0 ? placesNumber : ('counting' | translate) }}</p>
+      <p class="c-options__header-text">{{ 'search results' | translate }}</p>
+      <p class="c-options__header-text c-finder__results-text--bold">{{ placesNumber >= 0 ? placesNumber : ('counting' | translate) }}</p>
     </div>
-<div class="c-finder__options c-finder__item">
-  <div class="c-finder__option">
-    <input type="radio"
-           name="option"
-           id="option-free"
-           value="all"
-           class="c-finder__option c-finder__option-search-free"
-           (change)="onChange($event)"
-           [checked]="activeOption === 'all'"
-    />
-    <label for="option-free">{{ 'search everything' | translate }}</label>
+  <div class="c-options__search-type c-options__item">
+    <div class="c-options__layers">
+      <p class="c-options__header-text">{{ 'choose layer' | translate }}</p>
+    </div>
   </div>
+  <div class="c-options__item">
+    <div class="c-finder__option">
+      <input type="radio"
+             name="option"
+             id="option-free"
+             value="all"
+             (change)="onChange($event)"
+             [checked]="activeOption === 'all'"
+      />
+      <label for="option-free">{{ 'search everything' | translate }}</label>
+    </div>
 
-  <div class="c-finder__option">
-    <input type="radio"
-           name="option"
-           id="option-ending"
-           value="end"
-           class="c-finder__option c-finder__option-search-ending"
-           (change)="onChange($event)"
-           [checked]="activeOption === 'end'"
-    />
-    <label for="option-ending">{{ 'search endings' | translate }}</label>
-  </div>
+    <div class="c-finder__option">
+      <input type="radio"
+             name="option"
+             id="option-ending"
+             value="end"
+             (change)="onChange($event)"
+             [checked]="activeOption === 'end'"
+      />
+      <label for="option-ending">{{ 'search endings' | translate }}</label>
+    </div>
 
-  <div class="c-finder__option">
-    <input type="radio"
-           name="option"
-           id="option-beginning"
-           value="start"
-           class="c-finder__option c-finder__option-search-beginning"
-           (change)="onChange($event)"
-           [checked]="activeOption === 'start'"
-    />
-    <label for="option-beginning">{{ 'search beginnings' | translate }}</label>
+    <div class="c-finder__option">
+      <input type="radio"
+             name="option"
+             id="option-beginning"
+             value="start"
+             (change)="onChange($event)"
+             [checked]="activeOption === 'start'"
+      />
+      <label for="option-beginning">{{ 'search beginnings' | translate }}</label>
+    </div>
   </div>
-</div>
 </div>

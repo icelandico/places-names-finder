@@ -1,12 +1,15 @@
 @import "../../../variables";
 
-.c-finder__container {
+:host {
   position: absolute;
+  left: 220px;
   top: 10px;
-  left: 10%;
-  z-index: 450;
-  padding: 10px;
+  z-index: $base-zindex;
+}
 
+.c-finder__container {
+  display: flex;
+  z-index: 450;
 }
 
 .c-finder {
@@ -14,6 +17,8 @@
   height: 40px;
   font-size: 18px;
   border-radius: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
   border: 1px solid #fff;
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   padding: 10px;
@@ -30,6 +35,7 @@
 }
 
 .c-finder__input {
+  display: flex;
   border-radius: 5px;
 
   &--focus {
@@ -41,9 +47,11 @@
   height: 40px;
   border-radius: 0;
   border: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
   background-color: #426ac4;
   cursor: pointer;
-  color: #fff;
+  color: $color-white;
   font-size: 18px;;
   width: 100%;
 
@@ -57,37 +65,15 @@
   }
 }
 
+.c-finder__input-clear {
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
 .c-finder__item {
   @media(max-width: 768px) {
     margin-right: 0;
     margin-bottom: 0.5rem;
-  }
-}
-
-.c-finder__results-number {
-  background-color: #5476c4;
-  padding: 2px;
-  text-align: center;
-  z-index: 450;
-  color: #fff;
-  width: 40%;
-  margin-bottom: 0;
-
-  &.c-finder__no-results {
-    background-color: #af5e66;
-  }
-
-  @media (min-width: 768px) {
-    width: 130px;
-    border-radius: 5px;
-  }
-}
-
-.c-finder__results-text {
-  margin: 5px 0;
-
-  &--bold {
-    font-weight: bold;
   }
 }
 
@@ -98,15 +84,6 @@
   @media (min-width: 768px) {
     flex-direction: column;
     order: unset;
-  }
-}
-
-.c-finder__option {
-  color: #fff;
-  margin-bottom: 2px;
-
-  @media (max-width: 768px) {
-    display: flex;
   }
 }
 

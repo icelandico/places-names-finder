@@ -19,6 +19,8 @@ export const LANG_PL_TRANS = {
   'osada lesna': 'osada leśna',
   'osada': 'osada',
   'kolonia': 'kolonia',
-  'predefined phrases': 'Wybierz z predefiniowanych fraz'
+  'predefined phrases': 'Wybierz z predefiniowanych fraz',
+  'choose layer': 'Wybierz warstwę',
+  'search options': 'Wybierz rodzaj wyszukiwania'
 };
 

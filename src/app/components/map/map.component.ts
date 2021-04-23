@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Map, Control } from 'leaflet';
+import { Map } from 'leaflet';
 import { TranslateService } from '../../services/translate.service';
 
 @Component({

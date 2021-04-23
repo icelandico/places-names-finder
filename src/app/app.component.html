@@ -6,9 +6,11 @@
               [searchPhrase]="searchValue"
   >
   </app-finder>
-  <app-search-options></app-search-options>
+  <app-search-options
+    [placesNumber]="placesNumber"
+  ></app-search-options>
   <app-predefined-options (searchOption)="submitValue($event, true)"></app-predefined-options>
-  <app-carto-map [center]="[52, 19]" zoom="7" (onMapCreated)="onMapCreated($event)">
+  <app-carto-map [center]="[52, 18.5]" zoom="7" (onMapCreated)="onMapCreated($event)">
     <app-basemap
       [map]="map"
       url="https://{s}.basemaps.cartocdn.com/rastertiles/light_all/{z}/{x}/{y}.png">

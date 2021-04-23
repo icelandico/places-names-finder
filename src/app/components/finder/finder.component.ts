@@ -25,7 +25,6 @@ export class FinderComponent implements OnInit {
   }
 
   handleFocus(): void {
-    console.log('focus', this.inputFocused)
     this.inputFocused = !this.inputFocused;
   }
 
@@ -45,9 +44,9 @@ export class FinderComponent implements OnInit {
   }
 
   onLangChange(event: Event): void {
-      const eventValue = event.target as HTMLSelectElement;
-      this._translate.use(eventValue.value);
-      this._translate.setLangInStorage(eventValue.value);
-    }
+    const eventValue = event.target as HTMLSelectElement;
+    this._translate.use(eventValue.value);
+    this._translate.setLangInStorage(eventValue.value);
+  }
 }
 
