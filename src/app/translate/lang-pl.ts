@@ -21,6 +21,8 @@ export const LANG_PL_TRANS = {
   'kolonia': 'kolonia',
   'predefined phrases': 'Wybierz z predefiniowanych fraz',
   'choose layer': 'Wybierz warstwę',
-  'search options': 'Wybierz rodzaj wyszukiwania'
+  'search options': 'Wybierz rodzaj wyszukiwania',
+  'places': 'Miejscowości',
+  'rivers': 'Rzeki',
 };
 

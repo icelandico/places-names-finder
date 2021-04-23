@@ -21,5 +21,7 @@ export const LANG_EN_TRANS = {
   'kolonia': 'Hamlet colony',
   'predefined phrases': 'Use predefined phrases',
   'choose layer': 'Choose layer',
-  'search options': 'Choose search option'
+  'search options': 'Choose search option',
+  'places': 'Places',
+  'rivers': 'Rivers',
 };

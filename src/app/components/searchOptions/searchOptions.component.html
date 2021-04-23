@@ -8,9 +8,31 @@
   <div class="c-options__search-type c-options__item">
     <div class="c-options__layers">
       <p class="c-options__header-text">{{ 'choose layer' | translate }}</p>
+      <div class="c-finder__option">
+        <input type="radio"
+               name="option"
+               id="layer-places"
+               value="places"
+               (change)="onChange($event)"
+               [checked]="activeOption === 'all'"
+        />
+        <label for="layer-places">{{ 'cities' | translate }}</label>
+      </div>
+      <div class="c-finder__option">
+        <input type="radio"
+               name="option"
+               id="layer-rivers"
+               value="rivers"
+               (change)="onChange($event)"
+               [checked]="activeOption === 'all'"
+        />
+        <label for="layer-rivers">{{ 'rivers' | translate }}</label>
+      </div>
     </div>
   </div>
   <div class="c-options__item">
+    <p class="c-options__header-text">{{ 'search options' | translate }}</p>
+
     <div class="c-finder__option">
       <input type="radio"
              name="option"
