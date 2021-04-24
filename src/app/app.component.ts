@@ -1,4 +1,4 @@
-import {Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Map } from 'leaflet';
 import * as carto from '@carto/carto.js';
 import { environment } from '../environments/environment';
@@ -13,7 +13,6 @@ export class AppComponent implements OnInit {
   cartoClient: any;
   layerSource = `SELECT * FROM wojewodztwa`;
   pointsLayerSource = this.getAllPoints();
-  linesLayersSource = this.getAllLines();
   searchValue = '';
   optionValue = 'all';
   placesNumber: number;
@@ -52,20 +51,42 @@ export class AppComponent implements OnInit {
       [zoom >= 10]{ line-width: 11; }
     }
   `;
+  chosenLayer = 'places';
+  layerOptions = {
+    places: {
+      layer: 'pl_points',
+      name: 'places',
+      layerStyle: this.pointsLayerStyle,
+      source: this.getAllPoints(),
+      nameField: 'naz_glowna'
+    },
+    rivers: {
+      layer: 'rivers_pl',
+      name: 'rivers',
+      layerStyle: this.linesLayerStyle,
+      source: this.getAllLines(),
+      nameField: 'naz_rzeki'
+    }
+  };
 
   constructor() {
     this.cartoClient = new carto.Client({
       apiKey: environment.apiKey,
-      username:  environment.username
+      username: environment.username
     });
   }
 
   ngOnInit(): void {
     this.fetchPoints('');
+    console.log('client', this.cartoClient)
   }
 
   public onMapCreated(map): void {
     this.map = map;
+  }
+
+  public onChangeLayer(layer): void {
+    this.chosenLayer = layer;
   }
 
   public submitValue($event, predefined?): void {
@@ -118,23 +139,23 @@ export class AppComponent implements OnInit {
 
   private queryAll(name: string): string {
     return `
-      SELECT * FROM pl_points
-      WHERE lower(naz_glowna)
-      LIKE '%${name.toLowerCase()}%' `;
+      SELECT * FROM ${this.layerOptions[this.chosenLayer].layer}
+      WHERE lower(${this.layerOptions[this.chosenLayer].nameField})
+      LIKE '%${name.toLowerCase()}%'`;
   }
 
   private queryEndings(name): string {
     return `
-      SELECT * FROM pl_points
-      WHERE lower(naz_glowna)
-      LIKE '%${name.toLowerCase()}' `;
+      SELECT * FROM ${this.layerOptions[this.chosenLayer].layer}
+      WHERE lower(${this.layerOptions[this.chosenLayer].nameField})
+      LIKE '%${name.toLowerCase()}'`;
   }
 
   private queryStart(name): string {
     return `
-      SELECT * FROM pl_points
-      WHERE lower(naz_glowna)
-      LIKE '${name.toLowerCase()}%' `;
+      SELECT * FROM ${this.layerOptions[this.chosenLayer].layer}
+      WHERE lower(${this.layerOptions[this.chosenLayer].nameField})
+      LIKE '${name.toLowerCase()}%'`;
   }
 
   private getAllPoints(): string {

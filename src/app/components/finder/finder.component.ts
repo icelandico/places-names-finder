@@ -8,11 +8,8 @@ import { TranslateService } from '../../services/translate.service';
 })
 export class FinderComponent implements OnInit {
   @Output() searchValue: EventEmitter<string> = new EventEmitter<string>();
-  @Output() optionValue: EventEmitter<string> = new EventEmitter<string>();
-  @Input() activeOption;
   @Input() searchPhrase;
   @ViewChild('input') input: ElementRef;
-  @Input() placesNumber: number;
   initialLang: string;
   inputFocused = false;
 
@@ -37,10 +34,6 @@ export class FinderComponent implements OnInit {
       inputValue = this.input.nativeElement.value;
     }
     this.searchValue.emit(inputValue);
-  }
-
-  onChange(e): void {
-    this.optionValue.emit(e.target.value);
   }
 
   onLangChange(event: Event): void {

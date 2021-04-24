@@ -1,13 +1,11 @@
 <main>
-  <app-finder [placesNumber]="placesNumber"
-              (searchValue)="submitValue($event)"
-              (optionValue)="handleOption($event)"
-              [activeOption]="optionValue"
-              [searchPhrase]="searchValue"
-  >
-  </app-finder>
+  <app-finder (searchValue)="submitValue($event)" [searchPhrase]="searchValue"></app-finder>
   <app-search-options
+    (optionValue)="handleOption($event)"
     [placesNumber]="placesNumber"
+    [activeLayer]="chosenLayer"
+    [activeOption]="optionValue"
+    (layerOption)="onChangeLayer($event)"
   ></app-search-options>
   <app-predefined-options (searchOption)="submitValue($event, true)"></app-predefined-options>
   <app-carto-map [center]="[52.2, 18.5]" zoom="7" (onMapCreated)="onMapCreated($event)">
@@ -26,15 +24,17 @@
     <app-layer
       [map]="map"
       [client]="cartoClient"
-      [layerSource]="pointsLayerSource"
-      [layerStyle]="pointsLayerStyle">
+      [layerSource]="layerOptions.places.source"
+      [layerStyle]="layerOptions.places.layerStyle"
+    >
     </app-layer>
 
-<!--    <app-layer-->
-<!--      [map]="map"-->
-<!--      [client]="cartoClient"-->
-<!--      [layerSource]="linesLayersSource"-->
-<!--      [layerStyle]="linesLayerStyle">-->
-<!--    </app-layer>-->
+    <app-layer
+      [map]="map"
+      [client]="cartoClient"
+      [layerSource]="layerOptions.rivers.source"
+      [layerStyle]="layerOptions.rivers.layerStyle"
+    >
+    </app-layer>
   </app-carto-map>
 </main>

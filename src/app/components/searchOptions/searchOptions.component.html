@@ -5,30 +5,28 @@
       <p class="c-options__header-text">{{ 'search results' | translate }}</p>
       <p class="c-options__header-text c-finder__results-text--bold">{{ placesNumber >= 0 ? placesNumber : ('counting' | translate) }}</p>
     </div>
-  <div class="c-options__search-type c-options__item">
-    <div class="c-options__layers">
+  <div class="c-options__item c-options__layers">
       <p class="c-options__header-text">{{ 'choose layer' | translate }}</p>
       <div class="c-finder__option">
         <input type="radio"
-               name="option"
+               name="layer"
                id="layer-places"
                value="places"
-               (change)="onChange($event)"
-               [checked]="activeOption === 'all'"
+               (change)="onLayerChange($event)"
+               [checked]="activeLayer === 'places'"
         />
-        <label for="layer-places">{{ 'cities' | translate }}</label>
+        <label for="layer-places">{{ 'places' | translate }}</label>
       </div>
       <div class="c-finder__option">
         <input type="radio"
-               name="option"
+               name="layer"
                id="layer-rivers"
                value="rivers"
-               (change)="onChange($event)"
-               [checked]="activeOption === 'all'"
+               (change)="onLayerChange($event)"
+               [checked]="activeLayer === 'rivers'"
         />
         <label for="layer-rivers">{{ 'rivers' | translate }}</label>
       </div>
-    </div>
   </div>
   <div class="c-options__item">
     <p class="c-options__header-text">{{ 'search options' | translate }}</p>
