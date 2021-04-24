@@ -26,6 +26,7 @@
       [client]="cartoClient"
       [layerSource]="layerOptions.places.source"
       [layerStyle]="layerOptions.places.layerStyle"
+      [currentLayer]="chosenLayer"
     >
     </app-layer>
 
@@ -34,6 +35,7 @@
       [client]="cartoClient"
       [layerSource]="layerOptions.rivers.source"
       [layerStyle]="layerOptions.rivers.layerStyle"
+      [currentLayer]="chosenLayer"
     >
     </app-layer>
   </app-carto-map>

@@ -41,9 +41,9 @@ export class AppComponent implements OnInit {
 
   linesLayerStyle = `
     #layer {
-      line-width: 5;
+      line-width: 6;
       line-join: miter;
-      line-color: #FFF;
+      line-color: #FFB927;
       line-opacity: 1;
 
       [zoom < 7]{ line-width: 2; }
@@ -78,7 +78,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchPoints('');
-    console.log('client', this.cartoClient)
   }
 
   public onMapCreated(map): void {
