@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { Map } from 'leaflet';
 import * as carto from '@carto/carto.js';
 import { PopUpService } from '../../services/pop-up.service';
@@ -51,10 +51,13 @@ export class LayerComponent implements OnInit, OnChanges {
     if (layer === 'S2') {
       return ['naz_glowna', 'rodzaj_obi', 'woj', 'powiat'];
     }
+    if (layer === 'S3') {
+      return ['naz_rzeki'];
+    }
   }
 
   addClickListener(layer): void {
-    layer._id === 'L2' && layer.on('featureClicked', featureEvent => this.openPopup(featureEvent));
+    (layer._id === 'L2' || layer._id === 'L3') && layer.on('featureClicked', featureEvent => this.openPopup(featureEvent));
   }
 
   openPopup(featureEvent): void {
@@ -63,7 +66,6 @@ export class LayerComponent implements OnInit, OnChanges {
 
   ngOnChanges(): void {
     if (!this.layer) { return; }
-
     this.client.getLayers().forEach(layer => layer._id !== 'L1' && layer.hide());
 
     if (this.layer._id === this.mapLayersName[this.currentLayer]) {

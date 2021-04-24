@@ -43,7 +43,7 @@ export class AppComponent implements OnInit {
     #layer {
       line-width: 6;
       line-join: miter;
-      line-color: #FFB927;
+      line-color: #a9bfe5;
       line-opacity: 1;
 
       [zoom < 7]{ line-width: 2; }
@@ -77,7 +77,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.fetchPoints('');
+    this.fetchFeatures('');
   }
 
   public onMapCreated(map): void {
@@ -102,14 +102,14 @@ export class AppComponent implements OnInit {
         newValue = $event;
       }
       this.searchValue = newValue;
-      this.pointsLayerSource = this.querySource(newValue);
-      this.fetchPoints(newValue);
+      this.layerOptions[this.chosenLayer].source = this.querySource(newValue);
+      this.fetchFeatures(newValue);
       return;
     }
 
     this.searchValue = $event;
-    this.pointsLayerSource = this.querySource($event);
-    this.fetchPoints($event);
+    this.layerOptions[this.chosenLayer].source = this.querySource($event);
+    this.fetchFeatures($event);
   }
 
   public handleOption($event): void {
@@ -129,7 +129,7 @@ export class AppComponent implements OnInit {
     }
   }
 
-  private async fetchPoints(phrase): Promise<any> {
+  private async fetchFeatures(phrase): Promise<any> {
     const url = encodeURI(`https://icelandico.carto.com/api/v2/sql?q=${this.querySource(phrase)}`);
     const urlFetch = await fetch(url);
     const res = await urlFetch.json();
