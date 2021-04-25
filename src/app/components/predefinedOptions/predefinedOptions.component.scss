@@ -1,29 +1,26 @@
 @import '../../../variables';
 
+:host {
+  position: absolute;
+  top: 60px;
+  left: 220px;
+  z-index: 450;
+}
+
 .c-options__container {
-  position: fixed;
-  top: 33vh;
-  right: 1%;
-  max-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 40px;
+  min-width: 250px;
   padding: 0.5rem 1rem;
   background-color: #426ac4;
   border-radius: 5px;
   color: $color-white;
-  z-index: 450;
-
-  @media (min-width: 1280px) {
-    top: 100px;
-    right: 1%;
-  }
-
-  @media (min-width: 768px) {
-    top: 125px;
-    right: 1%;
-  }
 }
 
 .c-options__title {
-  margin: 8px 0;
+  margin-right: 10px;
 }
 
 .c-options__select {
@@ -33,8 +30,4 @@
   @media (max-width: 768px) {
     width: 100%;
   }
-}
-
-.c-options__option {
-
 }

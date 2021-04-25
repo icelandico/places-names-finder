@@ -88,10 +88,9 @@
 }
 
 .c-language__options {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  padding: 4px;
+  position: fixed;
+  top: 10px;
+  right: 50px;
   z-index: 450;
 
   @media (min-width: 768px) {
@@ -99,9 +98,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10px;
-    top: 0;
-    height: 100%;
   }
 }
 

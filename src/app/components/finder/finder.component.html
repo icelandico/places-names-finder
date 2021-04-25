@@ -4,11 +4,11 @@
     <button class="c-finder__button c-finder__search c-finder__item" type="submit" (click)="onSubmit()">{{ 'search' | translate }}</button>
   </div>
     <button class="c-finder__button c-finder__input-clear c-finder__item" type="button" (click)="onSubmit('clear')">{{ 'show all' | translate }}</button>
-<!--  <div class="c-language__options">-->
-<!--    <select class="c-language__select" (change)="onLangChange($event)" [value]="initialLang">-->
-<!--      <option value="pl">Polski</option>-->
-<!--      <option value="en">English</option>-->
-<!--    </select>-->
-<!--  </div>-->
+  <div class="c-language__options">
+    <select class="c-language__select" (change)="onLangChange($event)" [value]="initialLang">
+      <option value="pl">Polski</option>
+      <option value="en">English</option>
+    </select>
+  </div>
 </div>
 

@@ -15,8 +15,7 @@ export class PredefinedOptionsComponent implements OnInit {
   options: string[];
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   onOptionsChange(event): void {
     this.searchOption.emit(event.target.value);
