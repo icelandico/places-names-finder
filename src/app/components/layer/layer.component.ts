@@ -61,7 +61,7 @@ export class LayerComponent implements OnInit, OnChanges {
   }
 
   openPopup(featureEvent): void {
-      this.popupService.createPlacePopup(featureEvent, this.map);
+      this.popupService.createPopup(featureEvent, this.map);
   }
 
   ngOnChanges(): void {

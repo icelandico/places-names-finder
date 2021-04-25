@@ -11,7 +11,7 @@ export class PopUpService {
     private _translate: TranslateService
   ) { }
 
-  createPlacePopup(placeEvent: any, map): void {
+  createPopup(placeEvent: any, map): void {
     const popup = L.popup({ closeButton: false });
 
     let content = '<div class="widget">';

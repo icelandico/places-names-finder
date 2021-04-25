@@ -41,8 +41,8 @@ export class AppComponent implements OnInit {
 
   linesLayerStyle = `
     #layer {
-      line-width: 6;
-      line-join: miter;
+      line-width: 1;
+      line-join: round;
       line-color: #a9bfe5;
       line-opacity: 1;
 
