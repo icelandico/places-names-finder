@@ -16,8 +16,8 @@ export class PopUpService {
 
     let content = '<div class="widget">';
 
-    if (placeEvent.data.naz_glowna) {
-      content += `<h2 class="c-popup__title">${placeEvent.data.naz_glowna}</h2>`;
+    if (placeEvent.data.naz_glowna || placeEvent.data.naz_rzeki) {
+      content += `<h2 class="c-popup__title">${placeEvent.data.naz_glowna || placeEvent.data.naz_rzeki}</h2>`;
     }
 
     if (placeEvent.data.powiat || placeEvent.data.woj) {
