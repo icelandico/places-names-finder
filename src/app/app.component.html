@@ -7,7 +7,7 @@
     [activeOption]="optionValue"
     (layerOption)="onChangeLayer($event)"
   ></app-search-options>
-  <app-predefined-options (searchOption)="submitValue($event, true)"></app-predefined-options>
+  <app-predefined-options [layer]="chosenLayer" (searchOption)="submitValue($event, true)"></app-predefined-options>
   <app-carto-map [center]="[52.2, 18.5]" zoom="7" (onMapCreated)="onMapCreated($event)">
     <app-basemap
       [map]="map"

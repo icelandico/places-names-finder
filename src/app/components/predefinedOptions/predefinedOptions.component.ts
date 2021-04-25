@@ -1,5 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { TranslateService } from '../../services/translate.service';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { predefinedOptions } from './predefinedOptions';
 
 @Component({
   selector: 'app-predefined-options',
@@ -8,10 +8,15 @@ import { TranslateService } from '../../services/translate.service';
 })
 export class PredefinedOptionsComponent implements OnInit {
   @Output() searchOption: EventEmitter<string> = new EventEmitter<string>();
+  @Input() set layer(lyr) {
+    this.options = predefinedOptions[lyr];
+  }
 
+  options: string[];
   constructor() { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+  }
 
   onOptionsChange(event): void {
     this.searchOption.emit(event.target.value);
