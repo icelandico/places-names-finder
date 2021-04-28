@@ -1,6 +1,6 @@
 <div class="c-options__container">
-  <p class="c-options__title">{{ 'predefined phrases' | translate }}</p>
   <select class="c-options__select" (change)="onOptionsChange($event)">
+    <option value="" disabled selected>{{ 'predefined phrases' | translate }}</option>
     <option *ngFor="let option of options" class="c-options__option" [value]="option">
       {{ option }}
     </option>

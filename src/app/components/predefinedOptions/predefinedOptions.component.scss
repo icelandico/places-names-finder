@@ -2,13 +2,15 @@
 
 :host {
   position: absolute;
-  top: 110px;
+  top: 100px;
   left: 10px;
+  right: 10px;
   z-index: 450;
 
   @media (min-width: 768px) {
     top: 60px;
     left: 220px;
+    right: unset;
   }
 }
 
@@ -17,14 +19,7 @@
   align-items: center;
   justify-content: space-around;
   height: 40px;
-  min-width: 250px;
-  padding: 1.5rem 1rem;
-  background-color: #426ac4;
-  border-radius: 5px;
   color: $color-white;
-  @media (min-width: 768px) {
-    padding: 0.5rem 1rem;
-  }
 }
 
 .c-options__title {
@@ -32,8 +27,9 @@
 }
 
 .c-options__select {
-  padding: 3px;
+  padding: 5px;
   font-size: 16px;
+  border-radius: 5px;
 
   @media (max-width: 768px) {
     width: 100%;
