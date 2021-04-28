@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  apiKey: 'default_public',
+  username: 'icelandico'
 };
