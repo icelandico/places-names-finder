@@ -40,5 +40,8 @@ export const predefinedOptions: IOptions = {
     '-aba',
     '-sna',
     '-ura',
+    '-ga',
+    '-yca',
+    'mała-'
   ]
 };

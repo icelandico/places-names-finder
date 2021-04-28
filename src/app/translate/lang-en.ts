@@ -5,7 +5,7 @@ export const LANG_EN_TRANS = {
   'search results': 'Search results',
   'search': 'Search',
   'counting': 'Counting...',
-  'show all': 'Show all places',
+  'show all': 'Show all',
   'search everything': 'Search whole phrase',
   'search endings': 'Suffix only',
   'search beginnings': 'Prefix only',

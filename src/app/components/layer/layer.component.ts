@@ -74,7 +74,7 @@ export class LayerComponent implements OnInit, OnChanges {
       this.cartoCSS.setContent(this.layerStyle)
         .then(() => {
           this.layer.show()
-        }).catch(err => alert('You change layers too often.... Please reload the page'));
+        }).catch(err => alert('You change layers too often... :-(. Please reload the page'));
     }
   }
 }

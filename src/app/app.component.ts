@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
   placesNumber: number;
   layerStyle = `
     #layer {
-      polygon-fill: rgba(22, 33, 44, 0.5);
+      polygon-fill: rgba(22, 33, 44, 0.4);
       line-color: rgba(224, 216, 214, 1);
     }
   `;
@@ -42,12 +42,12 @@ export class AppComponent implements OnInit {
 
   linesLayerStyle = `
     #layer {
-      line-width: 1;
+      line-width: 2;
       line-join: round;
-      line-color: #a9bfe5;
+      line-color: #426ac4;
       line-opacity: 1;
 
-      [zoom < 7]{ line-width: 2; }
+      [zoom < 7]{ line-width: 2.5; }
       [zoom >= 8]{ line-width: 8; }
       [zoom >= 10]{ line-width: 11; }
     }
