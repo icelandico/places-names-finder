@@ -2,6 +2,7 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { Map } from 'leaflet';
 import * as carto from '@carto/carto.js';
 import { PopUpService } from '../../services/pop-up.service';
+import {logger} from "codelyzer/util/logger";
 
 @Component({
   selector: 'app-layer',
@@ -64,14 +65,16 @@ export class LayerComponent implements OnInit, OnChanges {
       this.popupService.createPopup(featureEvent, this.map, );
   }
 
-  ngOnChanges(): void {
+  ngOnChanges(changes): void {
     if (!this.layer) { return; }
-    this.client.getLayers().forEach(layer => layer._id !== 'L1' && layer.hide());
+    if (this.layer._id !== 'L1') this.layer.hide();
 
     if (this.layer._id === this.mapLayersName[this.currentLayer]) {
       this.cartoSource.setQuery(this.layerSource);
       this.cartoCSS.setContent(this.layerStyle)
-        .then(() => this.layer.show());
+        .then(() => {
+          this.layer.show()
+        }).catch(err => alert('You change layers too often.... Please reload the page'));
     }
   }
 }
