@@ -2,14 +2,25 @@
 
 :host {
   position: absolute;
-  left: 220px;
   top: 10px;
+  left: 10px;
+  right: 10px;
   z-index: $base-zindex;
+
+  @media (min-width: 768px) {
+    left: 220px;
+    right: unset;
+  }
 }
 
 .c-finder__container {
   display: flex;
+  flex-direction: column;
   z-index: 450;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 }
 
 .c-finder {
@@ -22,11 +33,10 @@
   border: 1px solid #fff;
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   padding: 10px;
-  width: 100%;
+  width: auto;
 
   @media (min-width: 768px) {
     padding: 0 0 0 10px;
-    width: auto;
   }
 
   &:focus {
@@ -67,7 +77,9 @@
 
 .c-finder__input-clear {
   border-radius: 5px;
-  margin-left: 10px;
+  @media (min-width: 768px) {
+    margin-left: 10px;
+  }
 }
 
 .c-finder__item {
@@ -75,6 +87,17 @@
     margin-right: 0;
     margin-bottom: 0.5rem;
   }
+}
+
+.c-finder__input-search {
+  flex: 2;
+  @media (min-width: 768px) {
+    flex-basis: inherit;
+  }
+}
+
+.c-finder__search {
+  flex: 1;
 }
 
 .c-finder__options {
@@ -89,15 +112,20 @@
 
 .c-language__options {
   position: fixed;
-  top: 10px;
-  right: 50px;
+  right: unset;
   z-index: 450;
+  top: 170px;
+  left: 10px;
 
   @media (min-width: 768px) {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    top: 10px;
+    right: 10px;
+    bottom: unset;
+    left: unset;
   }
 }
 

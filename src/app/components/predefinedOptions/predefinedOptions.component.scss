@@ -2,9 +2,14 @@
 
 :host {
   position: absolute;
-  top: 60px;
-  left: 220px;
+  top: 110px;
+  left: 10px;
   z-index: 450;
+
+  @media (min-width: 768px) {
+    top: 60px;
+    left: 220px;
+  }
 }
 
 .c-options__container {
@@ -13,10 +18,13 @@
   justify-content: space-around;
   height: 40px;
   min-width: 250px;
-  padding: 0.5rem 1rem;
+  padding: 1.5rem 1rem;
   background-color: #426ac4;
   border-radius: 5px;
   color: $color-white;
+  @media (min-width: 768px) {
+    padding: 0.5rem 1rem;
+  }
 }
 
 .c-options__title {

@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Map, TileLayer, Control } from 'leaflet';
-import Zoom = Control.Zoom;
 
 @Component({
   selector: 'app-basemap',
@@ -16,6 +15,6 @@ export class BasemapComponent implements OnInit {
     if (!this.map) return;
 
     new TileLayer(this.url).addTo(this.map);
-    new Control.Zoom({ position: 'topright' }).addTo(this.map);
+    new Control.Zoom({ position: 'bottomright' }).addTo(this.map);
   }
 }

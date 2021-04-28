@@ -11,8 +11,8 @@ export class MapComponent implements OnInit {
   map: Map;
 
   @Input() center;
-  @Input() zoom;
   @Output() onMapCreated: EventEmitter<any> = new EventEmitter();
+  private zoom = window.innerWidth >= 768 ? 7 : 6;
 
   constructor(
     private _translate: TranslateService
