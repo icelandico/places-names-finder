@@ -1,6 +1,6 @@
 <main>
   <app-finder (searchValue)="submitValue($event)" [searchPhrase]="searchValue"></app-finder>
-  <button class="c-button c-button--menu" [ngClass]="optionsVisible ? 'c-button--arrow-active' : ''" (click)="showOptions()">Options</button>
+  <button class="c-button c-button--menu" [ngClass]="optionsVisible ? 'c-button--arrow-active' : ''" (click)="showOptions()">{{ 'options' | translate }}</button>
   <app-search-options
     (optionValue)="handleOption($event)"
     [placesNumber]="placesNumber"

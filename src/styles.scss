@@ -76,4 +76,8 @@ body {
   &.c-button--arrow-active::before {
     transform: rotate(-45deg) translateY(-50%);
   }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 }

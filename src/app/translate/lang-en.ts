@@ -24,4 +24,5 @@ export const LANG_EN_TRANS = {
   'search options': 'Choose search option',
   'places': 'Places',
   'rivers': 'Rivers',
+  'options': 'Options'
 };

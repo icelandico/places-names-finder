@@ -24,5 +24,6 @@ export const LANG_PL_TRANS = {
   'search options': 'Wybierz rodzaj wyszukiwania',
   'places': 'Miejscowości',
   'rivers': 'Rzeki',
+  'options': 'Opcje',
 };
 
