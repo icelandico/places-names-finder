@@ -42,6 +42,6 @@ export const predefinedOptions: IOptions = {
     '-ura',
     '-ga',
     '-yca',
-    'mała-'
+    'mała-',
   ]
 };
