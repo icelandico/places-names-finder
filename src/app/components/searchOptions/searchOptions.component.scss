@@ -2,8 +2,8 @@
 
 .c-options__container {
   position: absolute;
-  right: -500px;
-  top: 10px;
+  right: -200px;
+  top: 170px;
   background-color: $primary-background;
   padding: 10px;
   width: 200px;
@@ -11,20 +11,16 @@
   z-index: $base-zindex;
   border-radius: 5px;
   color: $color-white;
-  transition: 0.5s right;
+  transition: 0.3s right;
 
   @media (min-width: 768px) {
     left: 10px;
     top: 10px;
   }
-}
 
-.c-options__menu-button {
-  font-size: 20px;
-  position: fixed;
-  top: 170px;
-  right: 10px;
-  z-index: 500;
+  &--active {
+    right: 10px;
+  }
 }
 
 .c-options__results-number {

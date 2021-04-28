@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
   pointsLayerSource = this.getAllPoints();
   searchValue = '';
   optionValue = 'all';
+  optionsVisible = false;
   placesNumber: number;
   layerStyle = `
     #layer {
@@ -163,5 +164,9 @@ export class AppComponent implements OnInit {
 
   private getAllLines(): string {
     return `SELECT * FROM rivers_pl`;
+  }
+
+  public showOptions(): void {
+    this.optionsVisible = !this.optionsVisible;
   }
 }

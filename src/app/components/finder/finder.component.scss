@@ -53,28 +53,6 @@
   }
 }
 
-.c-finder__button {
-  height: 40px;
-  border-radius: 0;
-  border: none;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  background-color: #426ac4;
-  cursor: pointer;
-  color: $color-white;
-  font-size: 18px;;
-  width: 100%;
-
-  &:hover {
-    background-color: #5476c4;
-    color: #fff;
-  }
-
-  @media (min-width: 768px) {
-    width: auto;
-  }
-}
-
 .c-finder__input-clear {
   border-radius: 5px;
   @media (min-width: 768px) {

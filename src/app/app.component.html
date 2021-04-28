@@ -1,11 +1,13 @@
 <main>
   <app-finder (searchValue)="submitValue($event)" [searchPhrase]="searchValue"></app-finder>
+  <button class="c-button c-button--menu" [ngClass]="optionsVisible ? 'c-button--arrow-active' : ''" (click)="showOptions()">Options</button>
   <app-search-options
     (optionValue)="handleOption($event)"
     [placesNumber]="placesNumber"
     [activeLayer]="chosenLayer"
     [activeOption]="optionValue"
     (layerOption)="onChangeLayer($event)"
+    [optionsActive]="optionsVisible"
   ></app-search-options>
   <app-predefined-options [layer]="chosenLayer" (searchOption)="submitValue($event, true)"></app-predefined-options>
   <app-carto-map [center]="[52.2, 18.5]" (onMapCreated)="onMapCreated($event)">

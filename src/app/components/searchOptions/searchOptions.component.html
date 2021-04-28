@@ -1,5 +1,4 @@
-<div class="c-options__container">
-  <div class="c-options__menu-button">Options</div>
+<div class="c-options__container" [ngClass]="optionsActive ? 'c-options__container--active' : ''">
     <div class="c-options__results-number"
         [ngClass]="placesNumber === 0 ? 'c-finder__no-results' : ''"
     >

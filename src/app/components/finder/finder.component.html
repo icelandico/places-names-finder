@@ -1,9 +1,9 @@
 <div class="c-finder__container">
   <div class="c-finder__input" [ngClass]="inputFocused ? 'c-finder__input--focus' : ''">
     <input (focus)="handleFocus()" (blur)="handleFocus()" #input class="c-finder c-finder__item c-finder__input-search" (keydown.enter)="onSubmit()" type="text" placeholder="{{ 'place name' | translate }}" [value]="searchPhrase"/>
-    <button class="c-finder__button c-finder__search c-finder__item" type="submit" (click)="onSubmit()">{{ 'search' | translate }}</button>
+    <button class="c-button c-finder__search c-finder__item" type="submit" (click)="onSubmit()">{{ 'search' | translate }}</button>
   </div>
-    <button class="c-finder__button c-finder__input-clear c-finder__item" type="button" (click)="onSubmit('clear')">{{ 'show all' | translate }}</button>
+    <button class="c-button c-finder__input-clear c-finder__item" type="button" (click)="onSubmit('clear')">{{ 'show all' | translate }}</button>
   <div class="c-language__options">
     <select class="c-language__select" (change)="onLangChange($event)" [value]="initialLang">
       <option value="pl">Polski</option>

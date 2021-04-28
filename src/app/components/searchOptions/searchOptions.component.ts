@@ -13,6 +13,7 @@ export class SearchOptionsComponent {
   @Input() activeLayer = 'rivers';
   @Input() searchPhrase;
   @Input() placesNumber: number;
+  @Input() optionsActive: boolean;
   initialLang: string;
 
   constructor(
